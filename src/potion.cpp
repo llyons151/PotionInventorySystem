@@ -19,10 +19,10 @@ void Potion::setQuantity(double dQuantity) { this->dQuantity = dQuantity; };
 double Potion::getQuantity() { return dQuantity; };
 
 // Display function
-void Potion::display(){
-    std::cout << "Name: " << szName
-                << "Type: " << szType
-                << "Potency: " << iPotency
-                << "Quantity: " << dQuantity 
-                << std::endl;
-};
+void Potion::display() {
+    std::cout << szName
+              << " [" << szType << "]"
+              << " - Potency: " << iPotency
+              << ", Quantity: " << std::fixed << std::setprecision(2) << dQuantity
+              << std::endl;
+}
