@@ -14,17 +14,17 @@ Notes:
 class Inventory
 {
 	private:
-		string szName;                          // Name of the inventory or owner
+        std::string szName;                          // Name of the inventory or owner
 		int iCurrentPotions;                    // Number of potions currently in inventory
 		Potion potionArr[MAX_INVENTORY_SIZE];   // Array of Potion objects
 
 	public:
 		Inventory();
-		Inventory(string szName);
+		Inventory(std::string szName);
 
 		// Setters and Getters
-		void setName(string szName);
-		string getName();
+		void setName(std::string szName);
+        std::string getName();
 		int getInventorySize();
 
 		// Inventory operations
