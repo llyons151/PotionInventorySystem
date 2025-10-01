@@ -15,6 +15,37 @@ void displayMenu()
 int main() 
 {
     std::cout << "Welcome to the Potion Inventory System!" << std::endl;
+
+    std::ifstream fileInput;
+    std::string fileName;
+    std::cout << "Enter filename: ";
+    std::cin >> fileName;
+    fileInput.open(fileName);
+    if(!fileInput.is_open()) {
+        std::cout << fileName << " does not exist" << std::endl;
+        return 0;
+    };
+
+    std::string szInventoryName;
+    std::getline(fileInput, szInventoryName);
+
+    Inventory potionInventory(szInventoryName);
+
+    std::string szPotionName, szPotionType;
+    int iPotionPotency;
+    double dPotionQuantity;
+
+    while(fileInput >> szPotionName
+                    >> szPotionType
+                    >> iPotionPotency
+                    >> dPotionQuantity)
+    {
+        Potion potion(szPotionName, szPotionType, iPotionPotency, dPotionQuantity);
+        potionInventory.addPotion(potion);
+    };
+    fileInput.close();
+
+    potionInventory.displayInventory();
     
     return 0;
 }

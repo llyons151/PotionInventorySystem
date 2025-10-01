@@ -1,0 +1,16 @@
+The Arcane Apothecary
+HealingPotion Health 50 5.0
+ManaPotion Mana 40 3.5
+StrengthElixir Buff 25 2.0
+InvisibilityDraught Stealth 15 1.5
+FireResistancePotion Defense 30 4.0
+WaterBreathPotion Utility 20 2.5
+LuckPotion Buff 10 1.0
+SpeedPotion Buff 35 3.0
+AntidotePotion Health 25 2.2
+NightVisionDraught Utility 15 1.8
+TeleportationPotion Utility 50 0.8
+StoneSkinElixir Defense 40 3.3
+RegenerationPotion Health 45 4.5
+WisdomDraught Buff 20 2.0
+EnergyPotion Mana 30 3.7
