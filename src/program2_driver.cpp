@@ -9,7 +9,7 @@ void displayMenu()
     std::cout << "2. Add a Potion" << std::endl;
     std::cout << "3. Calculate Weighted Average Potency" << std::endl;
     std::cout << "4. Clear Inventory" << std::endl;
-    std::cout << "-1. Exit" << std::endl;
+    std::cout << "-1. Exit" << std::endl << std::endl;
 }
 
 int main() 
@@ -29,7 +29,7 @@ int main()
     std::string szInventoryName;
     std::getline(fileInput, szInventoryName);
     Inventory potionInventory(szInventoryName);
-    std::cout << "Inventory " << szInventoryName << " has been loaded." << std::endl << std::endl;
+    std::cout << "Inventory \"" << szInventoryName << "\" has been loaded." << std::endl << std::endl;
 
     std::string szPotionName, szPotionType;
     int iPotionPotency;
@@ -47,7 +47,6 @@ int main()
 
 
     int iChoice;
-
     while(true)
     {
         displayMenu();
@@ -55,17 +54,33 @@ int main()
         std::cout << "Enter your choice: ";
         std::cin >> iChoice;
 
-        if(iChoice == -1) { return 0; };
+        if(iChoice == -1) 
+        {
+            std::cout << "Exiting the Potion Inventory System. " << std::endl;
+            return 0; 
+        };
 
         if(iChoice == 1)
         {
+            std::cout << "Displaying  Inventory Information: " << std::endl;
+            std::cout << szInventoryName << "'s Potion Inventory" << std::endl;
             potionInventory.displayInventory();
             continue;
         };
 
         if(iChoice == 2)
         {
+            std::cout << "Enter potion name: ";
+            std::cin >> szPotionName;
+            std::cout << "Enter potion type: ";
+            std::cin >> szPotionType;
+            std::cout << "Enter potion potency: ";
+            std::cin >> iPotionPotency;
+            std::cout << "Enter potion quantity: ";
+            std::cin >> dPotionQuantity;
 
+            Potion potion(szPotionName, szPotionType, iPotionPotency, dPotionQuantity);
+            potionInventory.addPotion(potion);
         };
 
         if(iChoice == 3)

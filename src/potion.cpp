@@ -22,7 +22,7 @@ double Potion::getQuantity() { return dQuantity; };
 void Potion::display() {
     std::cout << szName
               << " [" << szType << "]"
-              << " - Potency: " << iPotency
-              << ", Quantity: " << std::fixed << std::setprecision(2) << dQuantity
+              << " - Potency: " << iPotency << "%"
+              << ", Quantity: " << std::fixed << std::setprecision(2) << dQuantity << "L"
               << std::endl;
 }
