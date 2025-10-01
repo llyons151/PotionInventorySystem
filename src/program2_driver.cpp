@@ -63,30 +63,30 @@ int main()
         if(iChoice == 1)
         {
             std::cout << "Displaying  Inventory Information: " << std::endl;
-            std::cout << szInventoryName << "'s Potion Inventory" << std::endl;
             potionInventory.displayInventory();
             continue;
         };
 
         if(iChoice == 2)
         {
-            std::cout << "Enter potion name: ";
+            std::cout << "Enter the name of the potion: ";
             std::cin >> szPotionName;
-            std::cout << "Enter potion type: ";
+            std::cout << "Enter the type of the potion: ";
             std::cin >> szPotionType;
-            std::cout << "Enter potion potency: ";
+            std::cout << "Enter the potency of the potion: ";
             std::cin >> iPotionPotency;
-            std::cout << "Enter potion quantity: ";
+            std::cout << "Enter the quantity of the potion: ";
             std::cin >> dPotionQuantity;
 
             Potion potion(szPotionName, szPotionType, iPotionPotency, dPotionQuantity);
             potionInventory.addPotion(potion);
+            std::cout << "Potion added successfully!" << std::endl;
         };
 
         if(iChoice == 3)
         {
             std::cout << "The weighted average potency of all potions is: " 
-                << potionInventory.calculateWeightedAveragePotency() << "%" << std::endl;
+                << std::fixed << std::setprecision(2) << potionInventory.calculateWeightedAveragePotency() << "%" << std::endl;
         };
 
         if(iChoice == 4)
