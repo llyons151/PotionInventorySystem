@@ -28,8 +28,8 @@ int main()
 
     std::string szInventoryName;
     std::getline(fileInput, szInventoryName);
-
     Inventory potionInventory(szInventoryName);
+    std::cout << "Inventory " << szInventoryName << " has been loaded." << std::endl << std::endl;
 
     std::string szPotionName, szPotionType;
     int iPotionPotency;
@@ -45,7 +45,41 @@ int main()
     };
     fileInput.close();
 
-    potionInventory.displayInventory();
+
+    int iChoice;
+
+    while(true)
+    {
+        displayMenu();
+
+        std::cout << "Enter your choice: ";
+        std::cin >> iChoice;
+
+        if(iChoice == -1) { return 0; };
+
+        if(iChoice == 1)
+        {
+            potionInventory.displayInventory();
+            continue;
+        };
+
+        if(iChoice == 2)
+        {
+
+        };
+
+        if(iChoice == 3)
+        {
+            std::cout << "The weighted average potency of all potions is: " 
+                << potionInventory.calculateWeightedAveragePotency() << "%" << std::endl;
+        };
+
+        if(iChoice == 4)
+        {
+            potionInventory.clearInventory();
+            std::cout << "Inventory cleared successfully!" << std::endl;
+        };
+    };
     
     return 0;
 }
