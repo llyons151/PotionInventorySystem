@@ -2,6 +2,30 @@
 #include <iostream>
 #include <fstream>
 
+/*********************************************************************
+File name: program2_driver.cpp
+Author: Luke Lyons (ujw18)
+Date: 10/03/2025
+
+Purpose:
+    Runs the Potion Inventory System by loading data from a file
+    and providing a menu-driven interface for the user.
+
+Command Parameters:
+    None.
+
+Input:
+    Reads inventory data (name, type, potency, quantity) from a file
+    and user input from the console.
+
+Results:
+    Displays inventory contents, allows adding potions, clears
+    inventory, and calculates weighted average potency.
+
+Notes:
+    Inventory must be initialized with a valid file.
+*********************************************************************/
+
 void displayMenu()
 {
     std::cout << "\nPotion Inventory Menu:" << std::endl;

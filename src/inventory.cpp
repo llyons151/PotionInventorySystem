@@ -1,4 +1,25 @@
 #include "inventory.h"
+/*********************************************************************
+File name: inventory.cpp
+Author: Luke Lyons (ujw18)
+Date: 10/03/2025
+
+Purpose:
+    Implements the Inventory class for managing a collection of potions.
+
+Command Parameters:
+    None.
+
+Input:
+    Potions added from file or user input.
+
+Results:
+    Stores potions, displays inventory, calculates weighted potency,
+    and supports clearing inventory.
+
+Notes:
+    Maximum capacity is 30 potions.
+*********************************************************************/
 
 // Constructors
 Inventory::Inventory() : szName(""), iCurrentPotions(0) {};
